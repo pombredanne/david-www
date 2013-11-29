@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
 					// Copy other resources
 					{dest: 'dist/', src: 'img/**', expand: true, cwd: 'src/'},
-					{dest: 'dist/', src: 'font/**', expand: true, cwd: 'src/'}
+					{dest: 'dist/', src: 'fonts/**', expand: true, cwd: 'src/'}
 				]
 			}
 		},
@@ -74,11 +74,11 @@ module.exports = function(grunt) {
 			compress: {
 				options: {
 					keepSpecialComments: 0,
-					report: 'min'
+					report: 'min',
+					selectorsMergeMode: 'ie8'
 				},
 				files: {
-					'dist/css/main-<%= pkg.version %>.css': 'dist/css/main-<%= pkg.version %>.css',
-					'dist/css/font-awesome-ie7.css': 'dist/css/font-awesome-ie7.css'
+					'dist/css/main-<%= pkg.version %>.css': 'dist/css/main-<%= pkg.version %>.css'
 				}
 			}
 		},
