@@ -1,6 +1,6 @@
 {
   "name": "david-www",
-  "version": "2.10.0",
+  "version": "16.0.2",
   "description": "Watching your Node.js dependencies.",
   "main": "index.js",
   "homepage": "https://github.com/alanshaw/david-www",
@@ -23,49 +23,72 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "grunt"
+    "start": "node index",
+    "lint": "standard",
+    "build": "grunt",
+    "test": "npm run lint && tape test/*.js"
   },
   "dependencies": {
-    "async": "~0.2.9",
-    "config": "~0.4.33",
-    "consolidate": "~0.9.1",
-    "couchwatch": "~0.6.0",
-    "cycle": "~1.0.2",
-    "d3": "~3.3.10",
-    "david": "~2.4.0",
-    "dep-diff": "~1.0.1",
-    "express": "~3.4.4",
-    "extract": "~1.0.0",
-    "github": "~0.1.12",
-    "github-url": "~1.0.0",
-    "handlebars": "~1.1.2",
-    "memory-cache": "~0.0.5",
-    "merge": "~1.1.2",
-    "moment": "~2.4.0",
-    "npm": "~1.3.15",
-    "request": "~2.27.0",
-    "rss": "~0.2.1",
-    "semver": "~2.2.1"
+    "async": "^1.4.1",
+    "camelcase": "^3.0.0",
+    "compression": "^1.4.1",
+    "consolidate": "^0.14.0",
+    "couchwatch": "^0.6.0",
+    "cycle": "^1.0.3",
+    "d3": "^3.5.5",
+    "david": "^7.0.0",
+    "dep-diff": "^1.0.1",
+    "express": "^4.12.2",
+    "extract": "^1.0.0",
+    "github": "^0.2.3",
+    "github-url": "^1.1.0",
+    "handlebars": "^4.0.2",
+    "level": "^1.3.0",
+    "level-session": "^0.3.4",
+    "merge": "^1.2.0",
+    "meta-marked": "^0.4.0",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.11.2",
+    "npm": "^3.8.8",
+    "nsp-advisories-api": "^2.0.2",
+    "rc": "^1.1.5",
+    "request": "^2.53.0",
+    "require-directory": "^2.1.0",
+    "rimraf": "^2.4.3",
+    "rss": "^1.1.1",
+    "semver": "^5.0.1",
+    "serve-favicon": "^2.2.0"
   },
   "devDependencies": {
-    "brfs": "0.0.8",
-    "grunt": "~0.4.2",
-    "grunt-browserify": "~1.2.11",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-cssmin": "~0.7.0",
-    "grunt-contrib-jshint": "~0.7.2",
-    "grunt-contrib-less": "~0.8.2",
-    "grunt-contrib-nodeunit": "~0.2.2",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-include-replace": "~1.1.1",
-    "rewire": "~2.0.0"
+    "brfs": "^1.4.0",
+    "browserify-shim": "^3.8.12",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.1.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-include-replace": "^4.0.1",
+    "load-grunt-tasks": "^3.1.0",
+    "standard": "^7.0.1",
+    "tape": "^4.4.0"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   },
   "directories": {
     "test": "test"
+  },
+  "standard": {
+    "ignore": [
+      "public/js/vendor/*",
+      "public/js/plugins.js"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:$"
   }
 }
